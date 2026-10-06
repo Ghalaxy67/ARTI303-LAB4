@@ -1,0 +1,23 @@
+6 ?- consult(['D:/Ghala/uni/5th year CYS/AI/lab4/Lab04_family_facts.pl']).
+true.
+
+7 ?- female(X).
+X = sara ;
+X = nora.
+
+8 ?- male(_).
+true .
+
+9 ?- parent(X,Y), parent(Y, faisal).
+X = ali,
+Y = muhammad .
+
+10 ?- parent(ahmad,X), female(X).
+X = sara ;
+X = nora .
+
+11 ?- parent(X,ahmad), parent(X,muhammad).
+X = ali.
+
+12 ?- parent(X,khan), parent(X, nora), male(khan).
+X = ahmad.

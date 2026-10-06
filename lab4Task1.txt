@@ -1,0 +1,42 @@
+29 ?- house = house.
+true.
+Identical atoms always unify.
+
+30 ?- house = abc.
+false.
+Different atoms cannot unify.
+
+31 ?- edge(a,b) = edge(C,b).
+C = a.
+Same functor and arity, so C is bound to a.
+
+32 ?- edge(a,d) = edge(C,B).
+C = a,
+B = d.
+Each variable is bound to the atom in the same position.
+
+33 ?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+Unification is symmetric, so the result is the same as query 32.
+
+34 ?- edge(A,f(g,h)) = edge(a,B).
+A = a,
+B = f(g, h).
+A is bound to a, and B is bound to the compound term f(g,h).
+
+35 ?- edge(A,A) = edge(b,c).
+false.
+A cannot be both b and c.
+
+36 ?- edge(A,A) = edge(b,b).
+A = b.
+A is bound to b, which matches both arguments.
+
+37 ?-  A = B, B = f.
+A = B, B = f.
+A and B share a value, so both are bound to f.
+
+38 ?- A = B, B = f, A = e.
+false.
+A is already f, so it cannot also be e.
